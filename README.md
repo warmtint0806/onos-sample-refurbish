@@ -15,4 +15,5 @@ Checkout out our [website](http://www.onosproject.org) and our
 [tools](http://www.onosproject.org/software/#tools)
 
 ### Refurbishing ###
-I poke the original onos-sample app repository to make it work with ONOS version >= 2.6.0
+I poke the original onos-sample app repository to make it work with ONOS version >= 2.6.0. 
+Also, I'd like to make simple working manuals for each sample to help understanding. 

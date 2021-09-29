@@ -16,11 +16,12 @@
 package org.onos.oneping;
 
 import com.google.common.collect.HashMultimap;
-import org.apache.felix.scr.annotations.Activate;
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Deactivate;
-import org.apache.felix.scr.annotations.Reference;
-import org.apache.felix.scr.annotations.ReferenceCardinality;
+//import org.apache.felix.scr.annotations.Activate;
+//import org.apache.felix.scr.annotations.Component;
+//import org.apache.felix.scr.annotations.Deactivate;
+//import org.apache.felix.scr.annotations.Reference;
+//import org.apache.felix.scr.annotations.ReferenceCardinality;
+//import org.apache.felix.scr.annotations.ReferenceCardinality;
 import org.onlab.packet.Ethernet;
 import org.onlab.packet.IPv4;
 import org.onlab.packet.MacAddress;
@@ -44,6 +45,14 @@ import org.onosproject.net.packet.PacketContext;
 import org.onosproject.net.packet.PacketPriority;
 import org.onosproject.net.packet.PacketProcessor;
 import org.onosproject.net.packet.PacketService;
+
+//import org.osgi.service.component.annotations.*;
+
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -77,17 +86,17 @@ public class OnePing {
     private static final int DROP_PRIORITY = 129;
     private static final int TIMEOUT_SEC = 60; // seconds
 
-    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
-    protected CoreService coreService;
+    @Reference(cardinality = ReferenceCardinality.MANDATORY)
+    private CoreService coreService;
 
-    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
-    protected FlowObjectiveService flowObjectiveService;
+    @Reference(cardinality = ReferenceCardinality.MANDATORY)
+    private FlowObjectiveService flowObjectiveService;
 
-    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
-    protected FlowRuleService flowRuleService;
+    @Reference(cardinality = ReferenceCardinality.MANDATORY)
+    private FlowRuleService flowRuleService;
 
-    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
-    protected PacketService packetService;
+    @Reference(cardinality = ReferenceCardinality.MANDATORY)
+    private PacketService packetService;
 
     private ApplicationId appId;
     private final PacketProcessor packetProcessor = new PingPacketProcessor();

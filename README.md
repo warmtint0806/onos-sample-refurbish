@@ -13,3 +13,6 @@ https://github.com/opennetworkinglab/onos
 ### Where can I learn more about ONOS?
 Checkout out our [website](http://www.onosproject.org) and our
 [tools](http://www.onosproject.org/software/#tools)
+
+### Refurbishing ###
+I poke the original onos-sample app repository to make it work with ONOS version >= 2.6.0
